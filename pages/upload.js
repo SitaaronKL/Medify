@@ -40,21 +40,21 @@ export default function MedKitManager() {
         expiration: 1578435000,
         expiration_ttl: 300,
         key: item.name,
-        value: item.quantity
+        value: `${item.quantity}`
       });
     }
     console.log(medkit);
 
     const options = {
       method: 'PUT',
-      headers: {'Content-Type': 'application/json', Authorization: 'Bearer W2psZcVitf4DkX7HGzGOmuI3DUByFBJhA2SjQrs2', },
-      body: JSON.stringify(medkit)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ medkit }),  // Send the medkit object in the body
     };
-    
-    fetch('https://api.cloudflare.com/client/v4/accounts/8558a3a1313a8ae547ff7401df4ea2c9/storage/kv/namespaces/6c5af47300d84b0ba94a8ef8ff31b43e/bulk', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+  
+    fetch('/api/kv-update', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
   }
 
   return (
