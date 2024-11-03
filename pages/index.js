@@ -16,17 +16,12 @@ export default function Home() {
       <header className="w-full bg-white shadow-md py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <div className="flex items-center">
-            <Image src="/assets/icon.png" alt="Medify Logo" width={120} height={120} className="ml-4" />
+            <img src="/assets/icon.png" alt="Medify Logo" width={120} height={120} className="ml-4" />
           </div>
           <nav className="space-x-8">
-            <a href="#" className="text-gray-700 hover:text-green-600">Features</a>
-            <a href="#" className="text-gray-700 hover:text-green-600">How It Works</a>
-            <a href="#" className="text-gray-700 hover:text-green-600">Team</a>
-            <a href="#" className="text-gray-700 hover:text-green-600">Contact</a>
-            <a href="#" className="text-gray-700 hover:text-green-600">Login</a>
             <Link href="/upload">
               <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800">
-                Open App
+                Categorize Medkit
               </button>
             </Link>
           </nav>
@@ -52,7 +47,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex-1 mt-10 md:mt-0 md:ml-10">
-          <img src="/hero-image-placeholder.png" alt="App illustration" className="w-full h-auto rounded-lg shadow-md" />
+          <img src="/assets/preview.jpeg" alt="App illustration" className="w-full h-auto rounded-lg shadow-md" />
         </div>
       </section>
 

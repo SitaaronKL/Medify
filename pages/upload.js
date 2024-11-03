@@ -31,6 +31,32 @@ export default function MedKitManager() {
     }));
   };
 
+  const saveMedkit = () => {
+    const medkit = [];
+
+    for(let item of items) {
+      medkit.push({
+        base64: false,
+        expiration: 1578435000,
+        expiration_ttl: 300,
+        key: item.name,
+        value: item.quantity
+      });
+    }
+    console.log(medkit);
+
+    const options = {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json', Authorization: 'Bearer W2psZcVitf4DkX7HGzGOmuI3DUByFBJhA2SjQrs2', },
+      body: JSON.stringify(medkit)
+    };
+    
+    fetch('https://api.cloudflare.com/client/v4/accounts/8558a3a1313a8ae547ff7401df4ea2c9/storage/kv/namespaces/6c5af47300d84b0ba94a8ef8ff31b43e/bulk', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Head>
@@ -40,20 +66,25 @@ export default function MedKitManager() {
       </Head>
 
       {/* Navbar Section */}
-      <header className="w-full bg-white shadow-md py-2">
+      <header className="w-full bg-white shadow-md py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
           <div className="flex items-center">
             <Link href="/">
-            <Image src="/assets/icon.png" alt="Medify Logo" width={80} height={80} className="ml-2" />
+            <img src="/assets/icon.png" alt="Medify Logo" width={120} height={120} className="ml-2" />
             </Link>
           </div>
           
         </div>
       </header>
 
+
+
       {/* MedKit Manager Section */}
       <main className="max-w-7xl mx-auto mt-8 px-4">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">MedKit Manager</h2>
+        <div className="flex justify-between">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Medkit Manager</h2>
+          <h2 className="text-2xl font-semibold text-white mb-6 py-2 px-12 bg-emerald-600 rounded-xl cursor-pointer" onClick={saveMedkit}>Save Medkit</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Stats Cards */}
           <div className="bg-white p-3 rounded-lg shadow-md text-center">
@@ -88,7 +119,7 @@ export default function MedKitManager() {
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
           {items.map(item => (
             <div key={item.id} className={`p-3 rounded-lg shadow-md ${item.critical ? 'border-red-500 border' : 'border-gray-200 border'}`}>
               <div className="flex justify-between items-center mb-1">
