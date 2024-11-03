@@ -16,7 +16,7 @@ export default function Home() {
       <header className="w-full bg-white shadow-md py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <div className="flex items-center">
-            <Image src="/assets/icon.png" alt="Medify Logo" width={80} height={80} className="ml-4" />
+            <Image src="/assets/icon.png" alt="Medify Logo" width={120} height={120} className="ml-4" />
           </div>
           <nav className="space-x-8">
             <a href="#" className="text-gray-700 hover:text-green-600">Features</a>
@@ -24,7 +24,7 @@ export default function Home() {
             <a href="#" className="text-gray-700 hover:text-green-600">Team</a>
             <a href="#" className="text-gray-700 hover:text-green-600">Contact</a>
             <a href="#" className="text-gray-700 hover:text-green-600">Login</a>
-            <Link href="/action-page">
+            <Link href="/upload">
               <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800">
                 Open App
               </button>
@@ -45,7 +45,7 @@ export default function Home() {
           <p className="text-gray-700 mb-8">
             Medify provides field medics, emergency responders, and healthcare professionals with an AI-powered assistant for rapid wound identification, customized treatment guidance, and secure, blockchain-backed data storage. Whether you're on the frontlines or in remote locations, Medify ensures you have reliable, ethical, and efficient medical support at your fingertips.
           </p>
-          <Link href="/action-page">
+          <Link href="/upload">
             <button className="bg-green-700 text-white px-8 py-4 rounded-lg hover:bg-green-800">
               Open App
             </button>
@@ -111,26 +111,13 @@ export default function Home() {
       <footer className="w-full mt-24 bg-gray-800 py-12">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <p className="text-white text-lg mb-6">Ready to provide smarter medical care?</p>
-          <Link href="/action-page">
+          <Link href="/upload">
             <button className="bg-green-700 text-white px-8 py-4 rounded-lg hover:bg-green-800">
               Open App
             </button>
           </Link>
         </div>
       </footer>
-    </div>
-  );
-}
-
-// Action Page Component for Medify (Blank Page for Now)
-export function ActionPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Head>
-        <title>Medify - Action Page</title>
-        <meta name="description" content="Action Page for Medify App" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
     </div>
   );
 }
