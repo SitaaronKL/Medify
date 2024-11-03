@@ -16,8 +16,7 @@ export default function Home() {
       <header className="w-full bg-white shadow-md py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <div className="flex items-center">
-            <Image src="/assets/icon.png" alt="Medify Logo" width={40} height={40} />
-            <span className="ml-3 text-2xl font-bold text-green-700">Medify</span>
+            <Image src="/assets/icon.png" alt="Medify Logo" width={80} height={80} className="ml-4" />
           </div>
           <nav className="space-x-8">
             <a href="#" className="text-gray-700 hover:text-green-600">Features</a>
@@ -123,3 +122,22 @@ export default function Home() {
   );
 }
 
+// Action Page Component for Medify (Blank Page for Now)
+export function ActionPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Head>
+        <title>Medify - Action Page</title>
+        <meta name="description" content="Action Page for Medify App" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+    </div>
+  );
+}
+
+// Running the App
+// Make sure all dependencies are installed by running:
+// npm install
+// To run the app, use the command:
+// npm run dev
+// This will start the development server at http://localhost:3000.
