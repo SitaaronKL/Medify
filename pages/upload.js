@@ -7,18 +7,18 @@ import { PlusCircle, MinusCircle } from 'lucide-react';
 // MedKit Manager Page Component
 export default function MedKitManager() {
   const [items, setItems] = useState([
-    { id: 1, name: 'Combat Gauze', quantity: 0, critical: true },
-    { id: 7, name: 'Chest Seal', quantity: 0, critical: true },
-    { id: 10, name: 'Ibuprofen', quantity: 0, critical: true },
-    { id: 13, name: 'Burn Dressing', quantity: 0, critical: true },
-    { id: 2, name: 'Pressure Dressing', quantity: 0, critical: false },
-    { id: 3, name: 'Adhesive Tape', quantity: 0, critical: false },
-    { id: 5, name: 'NPA', quantity: 0, critical: false },
-    { id: 6, name: 'Shears', quantity: 0, critical: false },
-    { id: 8, name: 'Disinfectant', quantity: 0, critical: false },
-    { id: 9, name: 'Gloves', quantity: 0, critical: false },
-    { id: 11, name: 'Pen Light', quantity: 0, critical: false },
-    { id: 12, name: 'Marker', quantity: 0, critical: false }
+    { id: 1, name: 'Combat Gauze', quantity: 1, critical: true },
+    { id: 7, name: 'Chest Seal', quantity: 1, critical: true },
+    { id: 10, name: 'Ibuprofen', quantity: 1, critical: true },
+    { id: 13, name: 'Burn Dressing', quantity: 1, critical: true },
+    { id: 2, name: 'Pressure Dressing', quantity: 1, critical: false },
+    { id: 3, name: 'Adhesive Tape', quantity: 1, critical: false },
+    { id: 5, name: 'NPA', quantity: 1, critical: false },
+    { id: 6, name: 'Shears', quantity: 1, critical: false },
+    { id: 8, name: 'Disinfectant', quantity: 1, critical: false },
+    { id: 9, name: 'Gloves', quantity: 1, critical: false },
+    { id: 11, name: 'Pen Light', quantity: 1, critical: false },
+    { id: 12, name: 'Marker', quantity: 1, critical: false }
   ]);
 
   const updateQuantity = (id, increment) => {
